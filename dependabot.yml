@@ -1,0 +1,42 @@
+# Dependabot Configuration File
+# Save this as `.github/dependabot.yml` in your repository root.
+
+# Instructions to enable Dependabot:
+# 1. Create this file at `.github/dependabot.yml` in your repo.
+# 2. Dependabot will automatically start checking dependencies according to this config.
+# 3. Make sure GitHub Actions or Dependabot is enabled in your repository settings.
+
+version: 2
+
+updates:
+  # Add update configurations here for each package ecosystem and template path.
+
+  # Example: JavaScript (npm)
+  - package-ecosystem: "npm"          # The package manager you want Dependabot to update
+    directory: "/templates/js-template"  # Path to the directory containing package.json
+    schedule:
+      interval: "weekly"              # Options: "daily", "weekly", or "monthly"
+    open-pull-requests-limit: 5      # Limit on concurrent open PRs
+
+  # Example: Python (pip)
+  - package-ecosystem: "pip"
+    directory: "/templates/python-template"  # Path to directory with requirements.txt or Pipfile
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+
+  # Example: Docker images
+  - package-ecosystem: "docker"
+    directory: "/templates/docker-template"  # Directory with Dockerfile
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+
+# How to add new ecosystems:
+# - Copy one of the existing blocks above.
+# - Update 'package-ecosystem' to the desired package manager (e.g., "maven", "gradle", "github-actions").
+# - Update 'directory' to the folder containing dependency files for that ecosystem.
+# - Adjust 'schedule.interval' as needed.
+#
+# Refer to GitHub Dependabot documentation for supported ecosystems:
+# https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#package-ecosystem
