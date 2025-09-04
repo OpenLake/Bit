@@ -8,6 +8,26 @@ class BitRepository
     std::string conf;
 };
 
+std::string getPath()
+{
+    std::string path = "";
+    std::cout << "Enter path:";
+    std::cin >> path;
+    return path;
+};
+
+bool getForce()
+{
+    char temp = 'n';
+    std::cout << "Force? (Y/n): ";
+    std::cin >> temp;
+    if (temp == 'Y' || temp == 'y') {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 int init(std::string path, bool force)
 {
     std::cout << "Initializing repository at: " << path << " with force: " << force << std::endl;
@@ -15,18 +35,8 @@ int init(std::string path, bool force)
 }
 
 int main() {
-    std::string path = "";
-    bool force = "false";
-    char temp = 'n';
-    std::cout << "Enter path:";
-    std::cin >> path;
-    std::cout << "Force? (Y/n): ";
-    std::cin >> temp;
-    if (temp == 'Y' || temp == 'y') {
-        force = true;
-    } else {
-        force = false;
-    }
+    std::string path = getPath();
+    bool force = getForce();
     init(path, force);
     return 0;
 }
