@@ -1,9 +1,8 @@
  
-<h1 align="center">Project Name</h1>
+<h1 align="center">bit</h1>
 
 <p align="center">
-A concise one-line description of what the project does and why it exists.
-</p>
+Git for IIT Bhilai, made from scratch.</p>
 
 <p align="center">
     <!-- Status Options: Change `Deployed` to `In Development`, `Planned`, etc. -->
