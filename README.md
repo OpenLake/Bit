@@ -1,4 +1,4 @@
-# 🧠 bit — a tiny Git-like version control system in C++
+# 🧠 bit - a tiny Git-like version control system in C++
 
 [![C++17](https://img.shields.io/badge/C%2B%2B-17-blue.svg)](https://isocpp.org/)
 [![Build](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
