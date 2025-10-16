@@ -1,98 +1,138 @@
- 
-<h1 align="center">bit</h1>
+# 🧠 bit — a tiny Git-like version control system in C++
 
-<p align="center">
-Git for IIT Bhilai, made from scratch.</p>
+[![C++17](https://img.shields.io/badge/C%2B%2B-17-blue.svg)](https://isocpp.org/)
+[![Build](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
+[![License: MIT](https://img.shields.io/badge/license-MIT-lightgrey.svg)](LICENSE)
 
-<p align="center">
-    <!-- Status Options: Change `Deployed` to `In Development`, `Planned`, etc. -->
-    <img src="https://img.shields.io/badge/Status-Deployed-brightgreen" alt="Status: Deployed" />
-    <!-- Development Stage Options: Change `Ongoing` to `Completed`, `Maintenance`, etc. -->
-    <img src="https://img.shields.io/badge/Development-Ongoing-blue" alt="Development: Ongoing" />
-    <!-- License Options: Change `MIT` to your preferred license -->
-    <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License: MIT" />
-</p>
-<p align="center">
-<p align="center">
-    <!-- Automatically updates based on repo -->
-    <img src="https://img.shields.io/github/issues-pr-closed/your-username/project-name?color=success" alt="Pull Requests Merged" />
-    <img src="https://img.shields.io/github/issues/your-username/project-name?color=orange" alt="Open Issues" />
-    <img src="https://img.shields.io/github/contributors/your-username/project-name" alt="Contributors" />
-</p>
-</p>
+> A minimalist reimplementation of Git core concepts in modern C++17.  
+> Built for learning, exploration, and hacking on version control internals.
 
 ---
 
-## Repository Links <sup>[↥ Back to top](#table-of-contents)</sup>
-- **Main Repository:** [OpenLake](https://github.com/OpenLake)
-- **This Project Repository:** [Project Name](https://github.com/your-username/project-name)
+## 🚀 Features
 
-
-
-
----
-
-## Table of Contents
-1. [About the Project](#about-the-project)
-2. [Getting Started](#getting-started)
-3. [Usage](#usage)
-4. [Contributing](#contributing)
-5. [Maintainers](#maintainers)
-6. [License](#license)
+- 🏗️ **`bit init`** — initialize a new repository  
+- ➕ **`bit add <file>`** — stage files for commit  
+- 🧾 **`bit commit <message>`** — create commits  
+- 📜 **`bit log`** — view commit history  
+- 📂 **`bit status`** — check staging and changes  
+- 🌿 **`bit branch` / `bit checkout`** — manage branches  
+- 🔐 Uses **SHA-1** hashing and **zlib** compression (like real Git)
 
 ---
 
-## About the Project <sup>[↥ Back to top](#table-of-contents)</sup>
-Explain:
-- The problem your project solves.
-- Who the target audience is.
-- How it fits in the ecosystem (mention OpenLake if relevant).
+## 🗂️ Project Structure
+
+bit/
+├── include/
+│ ├── repository.h # Repository operations
+│ ├── object.h # Git objects (blobs, trees)
+│ ├── commit.h # Commit creation and logging
+│ ├── branch.h # Branch management
+│ └── utils.h # Helper utilities (hashing, compression)
+├── src/
+│ ├── repository.cpp
+│ ├── object.cpp
+│ ├── commit.cpp
+│ ├── branch.cpp
+│ ├── utils.cpp
+│ └── main.cpp # CLI entry point
+├── Makefile
+└── README.md
 
 ---
 
-## Getting Started <sup>[↥ Back to top](#table-of-contents)</sup>
+## 🛠️ Build Instructions
 
-### Prerequisites
-List the dependencies and tools required.
+### 🔧 Prerequisites
+You’ll need:
+- **g++** (C++17 or newer)
+- **make**
+- **zlib** and **OpenSSL** libraries
 
+For Ubuntu / Debian:
 ```bash
-# Example for Node.js
-npm install
-````
+sudo apt install g++ make zlib1g-dev libssl-dev
 
-### Installation
+⚙️ Build
+git clone https://github.com/<your-username>/bit.git
+cd bit
+make
 
-Step-by-step instructions to set up locally.
+▶️ Run
 
----
+Initialize a new repository:
+./bit init
 
-## Usage <sup>[↥ Back to top](#table-of-contents)</sup>
+Add and commit files:
+./bit add file.txt
+./bit commit "Initial commit"
 
-Provide examples of how to run or use the project.
+View log:
+./bit log
 
-```bash
-npm start
-```
+⚙️ Example Session
+$ ./bit init
+Initialized empty Bit repository in /path/to/project/.bit
 
-Explain configuration options if needed.
+$ echo "hello" > test.txt
+$ ./bit add test.txt
+$ ./bit commit "Add test file"
+Committed: Add test file (a3b4e9c...)
 
----
+$ ./bit log
+commit a3b4e9c...
+Author: user
+Message: Add test file
 
-## Contributing <sup>[↥ Back to top](#table-of-contents)</sup>
 
-We welcome contributions!
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+💡 Design Overview
 
----
+Each module mirrors Git’s real internal architecture:
 
-## Maintainers <sup>[↥ Back to top](#table-of-contents)</sup>
-Current Maintainers: <insert_github_link>
-See [MAINTAINERS.md](MAINTAINERS.md) for a full list.
+Module	Purpose
+repository	Handles .bit structure and configuration
+object	Creates and retrieves objects (blobs, trees)
+commit	Stores metadata and commit history
+branch	Manages refs/heads and HEAD state
+utils	Handles SHA-1, compression, filesystem ops
+📘 Learning Objectives
 
----
+Understand how Git works under the hood
 
-## License <sup>[↥ Back to top](#table-of-contents)</sup>
+Practice C++17 filesystem, hashing, and file I/O
 
-Distributed under the MIT License.
-See [LICENSE](LICENSE) for details.
- 
+Learn modular architecture + Makefile builds
+
+Explore content-addressable storage concepts
+
+🧑‍💻 Contributing
+
+Pull requests, suggestions, and experiments are welcome!
+If you’d like to extend this project:
+
+Add diff and merge functionality
+
+Support remote push/pull
+
+Implement tag and rebase commands
+
+⚖️ License
+
+MIT License © 2025
+Free to use, modify, and share.
+
+🌟 Acknowledgements
+
+Inspired by:
+
+Git Internals
+
+Write Yourself a Git
+
+Linus Torvalds’ original Git design
+
+🧊 TL;DR
+
+bit — your own mini Git, built from scratch in C++17.
+Learn how commits, objects, and branches really work under the hood.
