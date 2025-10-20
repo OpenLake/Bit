@@ -22,7 +22,7 @@
 ---
 
 ## 🗂️ Project Structure
-
+```
 bit/
 ├── include/
 │ ├── repository.h # Repository operations
@@ -39,6 +39,7 @@ bit/
 │ └── main.cpp # CLI entry point
 ├── Makefile
 └── README.md
+```
 ---
 
 ## 🛠️ Build Instructions
