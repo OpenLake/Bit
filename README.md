@@ -24,37 +24,21 @@
 ## 🗂️ Project Structure
 
 bit/
-
 ├── include/
-
 │ ├── repository.h # Repository operations
-
 │ ├── object.h # Git objects (blobs, trees)
-
 │ ├── commit.h # Commit creation and logging
-
 │ ├── branch.h # Branch management
-
 │ └── utils.h # Helper utilities (hashing, compression)
-
 ├── src/
-
 │ ├── repository.cpp
-
 │ ├── object.cpp
-
 │ ├── commit.cpp
-
 │ ├── branch.cpp
-
 │ ├── utils.cpp
-
 │ └── main.cpp # CLI entry point
-
 ├── Makefile
-
 └── README.md
-
 ---
 
 ## 🛠️ Build Instructions
