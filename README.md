@@ -84,19 +84,20 @@ $ ./bit log
 commit a3b4e9c...
 Author: user
 Message: Add test file
+```
 
-
-💡 Design Overview
+## 💡 Design Overview
 
 Each module mirrors Git’s real internal architecture:
 
 Module	Purpose
-repository	Handles .bit structure and configuration
-object	Creates and retrieves objects (blobs, trees)
-commit	Stores metadata and commit history
-branch	Manages refs/heads and HEAD state
-utils	Handles SHA-1, compression, filesystem ops
-📘 Learning Objectives
+- repository	Handles .bit structure and configuration
+- object	Creates and retrieves objects (blobs, trees)
+- commit	Stores metadata and commit history
+- branch	Manages refs/heads and HEAD state
+- utils	Handles SHA-1, compression, filesystem ops
+
+## 📘 Learning Objectives
 
 Understand how Git works under the hood
 
@@ -106,7 +107,7 @@ Learn modular architecture + Makefile builds
 
 Explore content-addressable storage concepts
 
-🧑‍💻 Contributing
+## 🧑‍💻 Contributing
 
 Pull requests, suggestions, and experiments are welcome!
 If you’d like to extend this project:
@@ -117,22 +118,20 @@ Support remote push/pull
 
 Implement tag and rebase commands
 
-⚖️ License
+## ⚖️ License
 
 MIT License © 2025
 Free to use, modify, and share.
 
-🌟 Acknowledgements
+## 🌟 Acknowledgements
 
 Inspired by:
 
-Git Internals
+- Git Internals
+- Write Yourself a Git
+- Linus Torvalds’ original Git design
 
-Write Yourself a Git
-
-Linus Torvalds’ original Git design
-
-🧊 TL;DR
+## 🧊 TL;DR
 
 bit — your own mini Git, built from scratch in C++17.
 Learn how commits, objects, and branches really work under the hood.
